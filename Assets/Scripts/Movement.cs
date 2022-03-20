@@ -59,6 +59,8 @@ public class Movement : MonoBehaviour
 
     void ApplyRotation( Vector3 orientation )
     {
+        rocketRigidbody.freezeRotation = true;
         transform.Rotate(orientation * rotationSpeed * Time.deltaTime);
+        rocketRigidbody.freezeRotation = false;
     }
 }
