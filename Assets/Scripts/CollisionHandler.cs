@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     int currentSceneIndex;
+    [SerializeField] float levelLoadDelay = 2f;
 
     void Start() 
     {
@@ -19,17 +20,29 @@ public class CollisionHandler : MonoBehaviour
             break;
 
             case "Finish":
-                LoadNextLevel();
-            break;
-
-            case "Fuel":
-                Debug.Log("You picked up fuel");
+                StartSuccessSequence();
             break;
 
             default:
-                ReloadLevel();
+                StartCrashSequence();
             break;
         }
+    }
+
+    void StartSuccessSequence()
+    {
+        // To do add SFX upon crash
+        // To do add paticle effect upon crash
+        GetComponent<Movement>().enabled = false;
+        Invoke("LoadNextLevel", levelLoadDelay);
+    }
+
+    void StartCrashSequence()
+    {
+        // To do add SFX upon crash
+        // To do add paticle effect upon crash
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", levelLoadDelay);
     }
 
     void ReloadLevel()
