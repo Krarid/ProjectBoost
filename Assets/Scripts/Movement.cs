@@ -6,15 +6,16 @@ public class Movement : MonoBehaviour
 {
     #region properties
 
+        [SerializeField] private float speed = 1000.0f;
+        [SerializeField] private float rotationSpeed = 100.0f;
+        [SerializeField] AudioClip mainEngine;
+        
         private bool upPressed;
         private bool leftPressed;
         private bool rightPressed;
 
         private Rigidbody rocketRigidbody;
         private AudioSource audioSource;
-
-        [SerializeField] private float speed = 1000.0f;
-        [SerializeField] private float rotationSpeed = 100.0f;
 
     #endregion
 
@@ -45,7 +46,7 @@ public class Movement : MonoBehaviour
 
                 if( !audioSource.isPlaying ) // Avoid audio playing several times in once
                 {
-                    audioSource.Play();
+                    audioSource.PlayOneShot(mainEngine);
                 } 
                 
             } else {
