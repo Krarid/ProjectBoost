@@ -5,7 +5,12 @@ public class CollisionHandler : MonoBehaviour
 {
     int currentSceneIndex;
 
-    private void OnCollisionEnter(Collision other)
+    void Start() 
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    void OnCollisionEnter(Collision other)
     {
         switch( other.gameObject.tag )
         {
@@ -14,7 +19,7 @@ public class CollisionHandler : MonoBehaviour
             break;
 
             case "Finish":
-                Debug.Log("Congrats, yo, you finished!");
+                LoadNextLevel();
             break;
 
             case "Fuel":
@@ -27,9 +32,13 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    private void ReloadLevel()
+    void ReloadLevel()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    void LoadNextLevel()
+    {
+        SceneManager.LoadScene( ++currentSceneIndex == SceneManager.sceneCountInBuildSettings ? 0 : currentSceneIndex );
     }
 }
