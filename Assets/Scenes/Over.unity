@@ -305,10 +305,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1732241823, guid: 593a487ff6ac87641bdf06346584596e, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1523127932933411360, guid: 593a487ff6ac87641bdf06346584596e, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -416,63 +412,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e5e8920431c82445924d57a35bd914e, type: 3}
---- !u!1001 &2097029189941185174
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300162, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097029190417300166, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
-      propertyPath: m_Name
-      value: Fuel
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 23dc9f8cd9d2d254b830f0cea0908e2f, type: 3}
 --- !u!1001 &6256219325809406552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -483,10 +422,6 @@ PrefabInstance:
     - target: {fileID: 1268265491080236030, guid: bcc580d6ec0e1c2449a3f3d9c2deef4b, type: 3}
       propertyPath: m_Name
       value: Landing Pad
-      objectReference: {fileID: 0}
-    - target: {fileID: 1268265491080236030, guid: bcc580d6ec0e1c2449a3f3d9c2deef4b, type: 3}
-      propertyPath: m_TagString
-      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 2348547527552742302, guid: bcc580d6ec0e1c2449a3f3d9c2deef4b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -544,10 +479,6 @@ PrefabInstance:
     - target: {fileID: 5137277774298799430, guid: 69017d29c6003d74f829192797c3dee7, type: 3}
       propertyPath: m_Name
       value: Launch Pad
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137277774298799430, guid: 69017d29c6003d74f829192797c3dee7, type: 3}
-      propertyPath: m_TagString
-      value: Friendly
       objectReference: {fileID: 0}
     - target: {fileID: 8522281487742575910, guid: 69017d29c6003d74f829192797c3dee7, type: 3}
       propertyPath: m_LocalPosition.x
