@@ -225,6 +225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   rotationSpeed: 100
+  mainEngine: {fileID: 8300000, guid: b093e8ad0ded16a459bebdc9f2306041, type: 3}
 --- !u!114 &1860918996995746943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebd9309852d62a4f9042f00d137113f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelLoadDelay: 2
+  crash: {fileID: 8300000, guid: c30704088ed3ebf4498135f4b20dfddd, type: 3}
+  success: {fileID: 8300000, guid: ada8abcae225bc54c8fcb51adf988ae0, type: 3}
