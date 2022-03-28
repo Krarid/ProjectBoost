@@ -5,10 +5,15 @@ public class CollisionHandler : MonoBehaviour
 {
     int currentSceneIndex;
     [SerializeField] float levelLoadDelay = 2f;
-    [SerializeField] public AudioClip crash;
-    [SerializeField] public AudioClip success;
+    [SerializeField] AudioClip crash;
+    [SerializeField] AudioClip success;
+
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem crashParticles;
 
     AudioSource audioSource;
+
+    Movement rocket;
 
     bool isTransitioning = false;
 
@@ -17,6 +22,8 @@ public class CollisionHandler : MonoBehaviour
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         audioSource = GetComponent<AudioSource>();
+
+        rocket = GetComponent<Movement>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -45,7 +52,11 @@ public class CollisionHandler : MonoBehaviour
         
         audioSource.Stop();
         audioSource.PlayOneShot( success );
-        // To do add paticle effect upon crash
+
+        StopRocketAnimations();
+
+        successParticles.Play();
+        
         GetComponent<Movement>().enabled = false;
         Invoke("LoadNextLevel", levelLoadDelay);
     }
@@ -56,7 +67,11 @@ public class CollisionHandler : MonoBehaviour
     
         audioSource.Stop();
         audioSource.PlayOneShot( crash );
-        // To do add paticle effect upon crash
+        
+        StopRocketAnimations();
+
+        crashParticles.Play();
+
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);
     }
@@ -71,5 +86,12 @@ public class CollisionHandler : MonoBehaviour
         currentSceneIndex = ++currentSceneIndex == SceneManager.sceneCountInBuildSettings ? 0 : currentSceneIndex;
 
         SceneManager.LoadScene( currentSceneIndex );
+    }
+
+    void StopRocketAnimations()
+    {
+        rocket.leftEngineParticles.Stop();
+        rocket.rightEngineParticles.Stop();
+        rocket.mainEngineParticles.Stop();
     }
 }
