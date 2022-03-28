@@ -9,7 +9,9 @@ public class Movement : MonoBehaviour
         [SerializeField] private float speed = 1000.0f;
         [SerializeField] private float rotationSpeed = 100.0f;
         [SerializeField] AudioClip mainEngine;
-        
+        [SerializeField] public ParticleSystem mainEngineParticles;
+        [SerializeField] public ParticleSystem leftEngineParticles;
+        [SerializeField] public ParticleSystem rightEngineParticles;
         private bool upPressed;
         private bool leftPressed;
         private bool rightPressed;
@@ -48,9 +50,15 @@ public class Movement : MonoBehaviour
                 {
                     audioSource.PlayOneShot(mainEngine);
                 } 
+
+                if( !mainEngineParticles.isPlaying )
+                {
+                    mainEngineParticles.Play();                    
+                }
                 
             } else {
                 audioSource.Stop();
+                mainEngineParticles.Stop();
             }
         }
 
@@ -62,12 +70,29 @@ public class Movement : MonoBehaviour
             if( leftPressed && !rightPressed  )
             {
                 ApplyRotation( Vector3.forward );
-            }  
+
+                if( !rightEngineParticles.isPlaying )
+                {
+                    rightEngineParticles.Play();                    
+                }
+            } else 
+            {
+                rightEngineParticles.Stop(); 
+            }
             
             if( rightPressed && !leftPressed )
             {
                 ApplyRotation( Vector3.back );
-            } 
+
+                if( !leftEngineParticles.isPlaying )
+                {
+                    leftEngineParticles.Play();                    
+                }
+            }
+            else
+            {
+                leftEngineParticles.Stop();    
+            }
         }
 
         void ApplyRotation( Vector3 orientation )
